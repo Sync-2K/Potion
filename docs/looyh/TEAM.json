@@ -1,0 +1,1634 @@
+{
+	"VITALS": [{
+		"name": "VITALS",
+		"type": "blank"
+	}, {
+		"name": "0No1Yes",
+		"type": "class",
+		"info": {
+			"options": [{
+				"name": "YES",
+				"value": 1
+			}, {
+				"name": "NO",
+				"value": 0
+			}]
+		}
+	}, {
+		"name": "UNIQUEID",
+		"type": "number",
+		"offset": "0xca8",
+		"size": 2,
+		"tip": "UNIQUEID_TIP",
+		"info": {
+			"readonly": 1
+		}
+	}, {
+		"name": "CURRENT_INDEX",
+		"type": "number",
+		"offset": "0xcaa",
+		"size": 1,
+		"tip": "CURRENT_INDEX_TIP",
+		"info": {
+			"readonly": 1,
+			"min": -1
+		}
+	}, {
+		"name": "UNIQUE_SIGNATURE_CRC32B",
+		"type": "number",
+		"offset": "0xca0",
+		"size": 4,
+		"tip": "UNIQUE_SIGNATURE_TIP",
+		"info": {
+			"hex": 1
+		}
+	}, {
+		"name": "AUDIO_SIGNATURE_CRC32B",
+		"type": "number",
+		"offset": "0xca4",
+		"size": 4,
+		"tip": "AUDIO_SIGNATURE_TIP",
+		"info": {
+			"hex": 1
+		}
+	}, {
+		"name": "CITYNAME",
+		"type": "string",
+		"offset": "0x2e6",
+		"size": 40,
+		"info": {}
+	}, {
+		"name": "CITY",
+		"type": "combo",
+		"offset": "0xc80",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "TEAMNAME",
+		"type": "string",
+		"offset": "0x2b4",
+		"size": 40,
+		"info": {}
+	}, {
+		"name": "ABB",
+		"type": "string",
+		"offset": "0x30a",
+		"size": 34,
+		"info": {}
+	}, {
+		"name": "MANTRA",
+		"type": "string",
+		"offset": "0xb2c",
+		"size": 68,
+		"info": {}
+	}, {
+		"name": "ARENANAME",
+		"type": "string",
+		"offset": "0x138",
+		"size": 60,
+		"info": {}
+	}, {
+		"name": "STADIUM",
+		"type": "combo",
+		"offset": "0xc78",
+		"size": 8,
+		"tip": "STADIUM_TIP",
+		"info": {}
+	}, {
+		"name": "MAINLOGO",
+		"type": "string",
+		"offset": "0x32c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "2ND_LOGO",
+		"type": "string",
+		"offset": "0x1b4",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "3D_LOGO",
+		"type": "string",
+		"offset": "0x42c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "3D_MIRROR_LOGO",
+		"type": "string",
+		"offset": "0x52c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "WM_LOGO",
+		"type": "string",
+		"offset": "0x62c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "WM_LOGO_ALT",
+		"type": "string",
+		"offset": "0x72c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "MURAL_LOGO",
+		"type": "string",
+		"offset": "0x82c",
+		"size": 256,
+		"tip": "MURAL_LOGO_TIP",
+		"info": {
+			"isutf8": 1
+		}
+	}, {
+		"name": "NENO_LOGO#A",
+		"type": "string",
+		"offset": "0x92c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	},{
+		"name": "NENO_LOGO#B",
+		"type": "string",
+		"offset": "0xA2c",
+		"size": 256,
+		"info": {
+			"isutf8": 1
+		}
+	},{
+		"name": "CUT_SCENE_LOGO",
+		"type": "string",
+		"offset": "0x176",
+		"size": 62,
+		"info": {}
+	}, {
+		"name": "PLAY_BY_PLAY_SOUND_ID",
+		"type": "number",
+		"offset": "0xee4",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "PA_SOUND_ID",
+		"type": "number",
+		"offset": "0xee6",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "CROWD_ID",
+		"type": "number",
+		"offset": "0xf74",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "TYPE",
+		"type": "blank"
+	}, {
+		"name": "TeamTypeOptions",
+		"type": "class",
+		"info": {
+			"options": [{
+				"name": "NORMAL",
+				"value": 0
+			}, {
+				"name": "HISTORIC",
+				"value": 1
+			}, {
+				"name": "USER",
+				"value": 2
+			}, {
+				"name": "ONLINE",
+				"value": 3
+			}, {
+				"name": "ALLSTARS_EAST",
+				"value": 4
+			}, {
+				"name": "ALLSTARS_WEST",
+				"value": 5
+			}, {
+				"name": "STREET_HOME",
+				"value": 6
+			}, {
+				"name": "STREET_AWAY",
+				"value": 7
+			}, {
+				"name": "ROOKIES",
+				"value": 8
+			}, {
+				"name": "SOPHOMORES",
+				"value": 9
+			}, {
+				"name": "ROOKIE_SHOWCASE",
+				"value": 10
+			}, {
+				"name": "MYTEAM_TEAM",
+				"value": 11
+			}, {
+				"name": "EUROLEAGUE",
+				"value": 12
+			}, {
+				"name": "DOMINATION",
+				"value": 13
+			}, {
+				"name": "COLLEGE",
+				"value": 14
+			}, {
+				"name": "SPORTS_2K",
+				"value": 15
+			}, {
+				"name": "HOOPS_SUMMIT",
+				"value": 16
+			}, {
+				"name": "HIGH_SCHOOL",
+				"value": 17
+			}, {
+				"name": "COLLEGE_DLC",
+				"value": 18
+			}, {
+				"name": "UNKNOWN",
+				"value": 19
+			}, {
+				"name": "UNKNOWN",
+				"value": 20
+			}, {
+				"name": "DREAMTEAM",
+				"value": 21
+			}, {
+				"name": "EXPANSION_SLOT",
+				"value": 22
+			}, {
+				"name": "EXPANSION_PREMADE",
+				"value": 23
+			}, {
+				"name": "HISTORIC_SNAPSHOT",
+				"value": 24
+			}, {
+				"name": "ALL_TIME",
+				"value": 25
+			}, {
+				"name": "E_LEAGUE",
+				"value": 26
+			}, {
+				"name": "WNBA",
+				"value": 27
+			}, {
+				"name": "DECADE",
+				"value": 28
+			}, {
+				"name": "MAMBA_MOMENTS",
+				"value": 29
+			}]
+		}
+	}, {
+		"name": "TYPE",
+		"type": "combo",
+		"offset": "0xeeb",
+		"size": 5,
+		"info": {
+			"startbit": 2,
+			"samedata": [{
+				"offset": "0xE46",
+				"startbit": 1
+			}],
+			"class": "TeamTypeOptions"
+		}
+	}, {
+		"name": "CLASSIC_TEAM_YEAR",
+		"type": "combo",
+		"offset": "0xcbb",
+		"size": 7,
+		"info": {
+			"startbit": 0,
+			"options": [{
+				"name": "NULL",
+				"value": 0
+			}, {
+				"name": "'00-'01 ",
+				"value": 1
+			}, {
+				"name": "'01-'02 ",
+				"value": 2
+			}, {
+				"name": "'02-'03 ",
+				"value": 3
+			}, {
+				"name": "'03-'04 ",
+				"value": 4
+			}, {
+				"name": "'04-'05 ",
+				"value": 5
+			}, {
+				"name": "'05-'06 ",
+				"value": 6
+			}, {
+				"name": "'06-'07 ",
+				"value": 7
+			}, {
+				"name": "'07-'08 ",
+				"value": 8
+			}, {
+				"name": "'08-'09 ",
+				"value": 9
+			}, {
+				"name": "'09-'10 ",
+				"value": 10
+			}, {
+				"name": "'10-'11 ",
+				"value": 11
+			}, {
+				"name": "'11-'12 ",
+				"value": 12
+			}, {
+				"name": "'12-'13 ",
+				"value": 13
+			}, {
+				"name": "'13-'14 ",
+				"value": 14
+			}, {
+				"name": "'14-'15 ",
+				"value": 15
+			}, {
+				"name": "'15-'16 ",
+				"value": 16
+			}, {
+				"name": "'16-'17 ",
+				"value": 17
+			}, {
+				"name": "'17-'18 ",
+				"value": 18
+			}, {
+				"name": "'18-'19 ",
+				"value": 19
+			}, {
+				"name": "'19-'20 ",
+				"value": 20
+			}, {
+				"name": "'20-'21 ",
+				"value": 21
+			}, {
+				"name": "'21-'22 ",
+				"value": 22
+			}, {
+				"name": "'22-'23 ",
+				"value": 23
+			}, {
+				"name": "'23-'24 ",
+				"value": 24
+			}, {
+				"name": "'24-'25 ",
+				"value": 25
+			}, {
+				"name": "'25-'26 ",
+				"value": 26
+			}, {
+				"name": "'26-'27 ",
+				"value": 27
+			}, {
+				"name": "'27-'28 ",
+				"value": 28
+			}, {
+				"name": "'28-'29 ",
+				"value": 29
+			}, {
+				"name": "'29-'30 ",
+				"value": 30
+			}, {
+				"name": "'30-'31 ",
+				"value": 31
+			}, {
+				"name": "'31-'32 ",
+				"value": 32
+			}, {
+				"name": "'32-'33 ",
+				"value": 33
+			}, {
+				"name": "'33-'34 ",
+				"value": 34
+			}, {
+				"name": "'34-'35 ",
+				"value": 35
+			}, {
+				"name": "'35-'36 ",
+				"value": 36
+			}, {
+				"name": "'36-'37 ",
+				"value": 37
+			}, {
+				"name": "'37-'38 ",
+				"value": 38
+			}, {
+				"name": "'38-'39 ",
+				"value": 39
+			}, {
+				"name": "'39-'40 ",
+				"value": 40
+			}, {
+				"name": "'40-'41 ",
+				"value": 41
+			}, {
+				"name": "'41-'42 ",
+				"value": 42
+			}, {
+				"name": "'42-'43 ",
+				"value": 43
+			}, {
+				"name": "'43-'44 ",
+				"value": 44
+			}, {
+				"name": "'44-'45 ",
+				"value": 45
+			}, {
+				"name": "'45-'46 ",
+				"value": 46
+			}, {
+				"name": "'46-'47 ",
+				"value": 47
+			}, {
+				"name": "'47-'48 ",
+				"value": 48
+			}, {
+				"name": "'48-'49 ",
+				"value": 49
+			}, {
+				"name": "'49-'50 ",
+				"value": 50
+			}, {
+				"name": "'50-'51 ",
+				"value": 51
+			}, {
+				"name": "'51-'52 ",
+				"value": 52
+			}, {
+				"name": "'52-'53 ",
+				"value": 53
+			}, {
+				"name": "'53-'54 ",
+				"value": 54
+			}, {
+				"name": "'54-'55 ",
+				"value": 55
+			}, {
+				"name": "'55-'56 ",
+				"value": 56
+			}, {
+				"name": "'56-'57 ",
+				"value": 57
+			}, {
+				"name": "'57-'58 ",
+				"value": 58
+			}, {
+				"name": "'58-'59 ",
+				"value": 59
+			}, {
+				"name": "'59-'60 ",
+				"value": 60
+			}, {
+				"name": "'60-'61 ",
+				"value": 61
+			}, {
+				"name": "'61-'62 ",
+				"value": 62
+			}, {
+				"name": "'62-'63 ",
+				"value": 63
+			}, {
+				"name": "'63-'64 ",
+				"value": 64
+			}, {
+				"name": "'64-'65 ",
+				"value": 65
+			}, {
+				"name": "'65-'66 ",
+				"value": 66
+			}, {
+				"name": "'66-'67 ",
+				"value": 67
+			}, {
+				"name": "'67-'68 ",
+				"value": 68
+			}, {
+				"name": "'68-'69 ",
+				"value": 69
+			}, {
+				"name": "'69-'70 ",
+				"value": 70
+			}, {
+				"name": "'70-'71 ",
+				"value": 71
+			}, {
+				"name": "'71-'72 ",
+				"value": 72
+			}, {
+				"name": "'72-'73 ",
+				"value": 73
+			}, {
+				"name": "'73-'74 ",
+				"value": 74
+			}, {
+				"name": "'74-'75 ",
+				"value": 75
+			}, {
+				"name": "'75-'76 ",
+				"value": 76
+			}, {
+				"name": "'76-'77 ",
+				"value": 77
+			}, {
+				"name": "'77-'78 ",
+				"value": 78
+			}, {
+				"name": "'78-'79 ",
+				"value": 79
+			}, {
+				"name": "'79-'80 ",
+				"value": 80
+			}, {
+				"name": "'80-'81 ",
+				"value": 81
+			}, {
+				"name": "'81-'82 ",
+				"value": 82
+			}, {
+				"name": "'82-'83 ",
+				"value": 83
+			}, {
+				"name": "'83-'84 ",
+				"value": 84
+			}, {
+				"name": "'84-'85 ",
+				"value": 85
+			}, {
+				"name": "'85-'86 ",
+				"value": 86
+			}, {
+				"name": "'86-'87 ",
+				"value": 87
+			}, {
+				"name": "'87-'88 ",
+				"value": 88
+			}, {
+				"name": "'88-'89 ",
+				"value": 89
+			}, {
+				"name": "'89-'90 ",
+				"value": 90
+			}, {
+				"name": "'90-'91 ",
+				"value": 91
+			}, {
+				"name": "'91-'92 ",
+				"value": 92
+			}, {
+				"name": "'92-'93 ",
+				"value": 93
+			}, {
+				"name": "'93-'94 ",
+				"value": 94
+			}, {
+				"name": "'94-'95 ",
+				"value": 95
+			}, {
+				"name": "'95-'96 ",
+				"value": 96
+			}, {
+				"name": "'96-'97 ",
+				"value": 97
+			}, {
+				"name": "'97-'98 ",
+				"value": 98
+			}, {
+				"name": "'98-'99 ",
+				"value": 99
+			}, {
+				"name": "'99-'00 ",
+				"value": 100
+			}]
+		}
+	}, {
+		"name": "USER_EDITED",
+		"type": "combo",
+		"offset": "0x1037",
+		"size": 1,
+		"info": {
+			"startbit": 4,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "SHOW_CITY_IN_NAME",
+		"type": "combo",
+		"offset": "0x1037",
+		"size": 1,
+		"info": {
+			"startbit": 5,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "INFO",
+		"type": "blank"
+	}, {
+		"name": "POPULARITY",
+		"type": "number",
+		"offset": "0xcb0",
+		"size": 1,
+		"info": {
+			"max": 100
+		}
+	}, {
+		"name": "FAN_INTEREST",
+		"type": "float",
+		"offset": "0xf7c",
+		"size": 4,
+		"info": {
+			"max": 1
+		}
+	}, {
+		"name": "CHEMISTRY",
+		"type": "float",
+		"offset": "0xec4",
+		"size": 4,
+		"info": {
+			"max": 100
+		}
+	}, {
+		"name": "RIVAL#1",
+		"type": "combo",
+		"offset": "0xcc0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "RIVAL#2",
+		"type": "combo",
+		"offset": "0xcc8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "RIVAL#3",
+		"type": "combo",
+		"offset": "0xcd0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "SALARY",
+		"type": "number",
+		"offset": "0xcbc",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "LUXURY_TAX",
+		"type": "combo",
+		"offset": "0x1037",
+		"size": 1,
+		"info": {
+			"startbit": 6,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "ADVANCED_ROTATION",
+		"type": "combo",
+		"offset": "0x1037",
+		"size": 1,
+		"info": {
+			"startbit": 7,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "NON_BIRD_EXCEPTION_AVAILABLE",
+		"type": "combo",
+		"offset": "0xee0",
+		"size": 1,
+		"info": {
+			"startbit": 0,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "MLE_TYPE",
+		"type": "combo",
+		"offset": "0xee0",
+		"size": 2,
+		"info": {
+			"startbit": 1,
+			"options": [{
+				"name": "NON_TAXPAYER",
+				"value": 0
+			}, {
+				"name": "TAXPAYER",
+				"value": 1
+			}, {
+				"name": "CAP_ROOM",
+				"value": 2
+			}]
+		}
+	}, {
+		"name": "MLE_REMAINING",
+		"type": "bit",
+		"offset": "0xee0",
+		"size": 24,
+		"info": {
+			"startbit": 3
+		}
+	}, {
+		"name": "MASCOT_SIZE",
+		"type": "combo",
+		"offset": "0xee8",
+		"size": 2,
+		"info": {
+			"startbit": 0,
+			"options": [{
+				"name": "NULL",
+				"value": 0
+			}, {
+				"name": "SMALL",
+				"value": 1
+			}, {
+				"name": "BIG",
+				"value": 2
+			}]
+		}
+	}, {
+		"name": "STATE",
+		"type": "combo",
+		"offset": "0xee8",
+		"size": 2,
+		"info": {
+			"startbit": 4,
+			"options": [{
+				"name": "STEADY",
+				"value": 0
+			}, {
+				"name": "BUYING",
+				"value": 1
+			}, {
+				"name": "SELLING",
+				"value": 2
+			}, {
+				"name": "REBUILDING",
+				"value": 3
+			}]
+		}
+	}, {
+		"name": "LONGEST_WIN_STREAK",
+		"type": "bit",
+		"offset": "0xf79",
+		"size": 7,
+		"info": {
+			"startbit": 0
+		}
+	}, {
+		"name": "LONGEST_LOSS_STREAK",
+		"type": "bit",
+		"offset": "0xf79",
+		"size": 6,
+		"info": {
+			"startbit": 7
+		}
+	}, {
+		"name": "DIVISION",
+		"type": "combo",
+		"offset": "0xf7a",
+		"size": 5,
+		"info": {
+			"startbit": 6,
+			"options": [{
+				"name": "ATLANTIC",
+				"value": 0
+			}, {
+				"name": "CENTRAL",
+				"value": 1
+			}, {
+				"name": "SOUTHEAST",
+				"value": 2
+			}, {
+				"name": "SOUTHWEST",
+				"value": 3
+			}, {
+				"name": "NORTHWEST",
+				"value": 4
+			}, {
+				"name": "PACIFIC",
+				"value": 5
+			}, {
+				"name": "LEGEND",
+				"value": 6
+			}, {
+				"name": "ALLSTAR",
+				"value": 7
+			}, {
+				"name": "Sega",
+				"value": 8
+			}]
+		}
+	}, {
+		"name": "METRO_POPULATION",
+		"type": "number",
+		"offset": "0xf80",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "METRO_INCOME_M",
+		"type": "number",
+		"offset": "0xf84",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "TV_HOMES",
+		"type": "number",
+		"offset": "0xf88",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "IS_DOWNTOWN",
+		"type": "combo",
+		"offset": "0x1037",
+		"size": 1,
+		"info": {
+			"startbit": 7,
+			"class": "0No1Yes"
+		}
+	}, {
+		"name": "G-LEAGUE_TEAM",
+		"type": "combo",
+		"offset": "0x1249",
+		"size": 5,
+		"info": {
+			"startbit": 2,
+			"options": [{
+				"name": "NULL",
+				"value": 0
+			}, {
+				"name": "ONT ",
+				"value": 1
+			}, {
+				"name": "AUS ",
+				"value": 2
+			}, {
+				"name": "CAN ",
+				"value": 3
+			}, {
+				"name": "CAP ",
+				"value": 4
+			}, {
+				"name": "DEL ",
+				"value": 5
+			}, {
+				"name": "ERI ",
+				"value": 6
+			}, {
+				"name": "FOR ",
+				"value": 7
+			}, {
+				"name": "GRA ",
+				"value": 8
+			}, {
+				"name": "GRE ",
+				"value": 9
+			}, {
+				"name": "IOW ",
+				"value": 10
+			}, {
+				"name": "LAK ",
+				"value": 11
+			}, {
+				"name": "LON ",
+				"value": 12
+			}, {
+				"name": "MAI ",
+				"value": 13
+			}, {
+				"name": "MEM ",
+				"value": 14
+			}, {
+				"name": "NOR ",
+				"value": 15
+			}, {
+				"name": "OKC ",
+				"value": 16
+			}, {
+				"name": "RAP ",
+				"value": 17
+			}, {
+				"name": "REN ",
+				"value": 18
+			}, {
+				"name": "RIO ",
+				"value": 19
+			}, {
+				"name": "SAL ",
+				"value": 20
+			}, {
+				"name": "SCZ ",
+				"value": 21
+			}, {
+				"name": "SIO ",
+				"value": 22
+			}, {
+				"name": "SOU ",
+				"value": 23
+			}, {
+				"name": "TEX ",
+				"value": 24
+			}, {
+				"name": "WES ",
+				"value": 25
+			}, {
+				"name": "WIN ",
+				"value": 26
+			}, {
+				"name": "WIS ",
+				"value": 27
+			}]
+		}
+	}, {
+		"name": "COLOR",
+		"type": "blank"
+	}, {
+		"name": "TEAMCOLOR#1",
+		"type": "color",
+		"offset": "0xcb4",
+		"size": 3,
+		"info": {}
+	}, {
+		"name": "TEAMCOLOR#2",
+		"type": "color",
+		"offset": "0xcb8",
+		"size": 3,
+		"info": {}
+	}, {
+		"name": "TEAMCOLOR#3",
+		"type": "color",
+		"offset": "0x1040",
+		"size": 3,
+		"info": {}
+	}, {
+		"name": "SHOT_METER_COLOR",
+		"type": "color",
+		"offset": "0x1054",
+		"size": 3,
+		"info": {}
+	}, {
+		"name": "TEXT_LIGHT",
+		"type": "color",
+		"offset": "0x1058",
+		"size": 3,
+		"info": {}
+	}, {
+		"name": "TEXT_DARK",
+		"type": "color",
+		"offset": "0x105c",
+		"size": 3,
+		"info": {}
+	}],
+	"JERSEY": [{
+		"name": "JERSEY",
+		"subtitle": "JERSEY_SUB",
+		"type": "blank"
+	}, {
+		"name": "JERSEY_HOME",
+		"type": "combo",
+		"offset": "0xb78",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_AWAY",
+		"type": "combo",
+		"offset": "0xb80",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#3",
+		"type": "combo",
+		"offset": "0xb88",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#4",
+		"type": "combo",
+		"offset": "0xb90",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#5",
+		"type": "combo",
+		"offset": "0xb98",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#6",
+		"type": "combo",
+		"offset": "0xba0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#7",
+		"type": "combo",
+		"offset": "0xba8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#8",
+		"type": "combo",
+		"offset": "0xbb0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#9",
+		"type": "combo",
+		"offset": "0xbb8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#10",
+		"type": "combo",
+		"offset": "0xbc0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#11",
+		"type": "combo",
+		"offset": "0xbc8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#12",
+		"type": "combo",
+		"offset": "0xbd0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#13",
+		"type": "combo",
+		"offset": "0xbd8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#14",
+		"type": "combo",
+		"offset": "0xbe0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#15",
+		"type": "combo",
+		"offset": "0xbe8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#16",
+		"type": "combo",
+		"offset": "0xbf0",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#17",
+		"type": "combo",
+		"offset": "0xbf8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#18",
+		"type": "combo",
+		"offset": "0xc00",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#19",
+		"type": "combo",
+		"offset": "0xc08",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#20",
+		"type": "combo",
+		"offset": "0xc10",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#21",
+		"type": "combo",
+		"offset": "0xc18",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#22",
+		"type": "combo",
+		"offset": "0xc20",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#23",
+		"type": "combo",
+		"offset": "0xc28",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#24",
+		"type": "combo",
+		"offset": "0xc30",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#25",
+		"type": "combo",
+		"offset": "0xc38",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#26",
+		"type": "combo",
+		"offset": "0xc40",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#27",
+		"type": "combo",
+		"offset": "0xc48",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#28",
+		"type": "combo",
+		"offset": "0xc50",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#29",
+		"type": "combo",
+		"offset": "0xc58",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "JERSEY_N#30",
+		"type": "combo",
+		"offset": "0xc60",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "PRACTICE_HOME",
+		"type": "combo",
+		"offset": "0xc68",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "PRACTICE_AWAY",
+		"type": "combo",
+		"offset": "0xc70",
+		"size": 8,
+		"info": {}
+	}],
+	"STATS": [{
+		"name": "HISTORY",
+		"type": "blank"
+	}, {
+		"name": "LAST_YEAR_PLAYOFFS_ROUND",
+		"type": "combo",
+		"offset": "0xec1",
+		"size": 3,
+		"info": {
+			"startbit": 0,
+			"options": [{
+				"name": "NULL",
+				"value": 0
+			}, {
+				"name": "ROUND_N#1",
+				"value": 1
+			}, {
+				"name": "ROUND_N#2",
+				"value": 2
+			}, {
+				"name": "CONFERENCE_FINALS",
+				"value": 3
+			}, {
+				"name": "FINALS",
+				"value": 4
+			}, {
+				"name": "CHAMPIONSHIP",
+				"value": 5
+			}]
+		}
+	}, {
+		"name": "LAST_YEAR_PLAYOFFS_SERIES_GAMES",
+		"type": "bit",
+		"offset": "0xcb7",
+		"size": 3,
+		"info": {
+			"startbit": 0
+		}
+	}, {
+		"name": "LAST_YEAR_PLAYOFFS_OPPONENT",
+		"type": "combo",
+		"offset": "0xed8",
+		"size": 8,
+		"info": {}
+	}, {
+		"name": "LAST_PLAYOFF_YEAR",
+		"type": "number",
+		"offset": "0xcac",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "PLAYOFF_APPEARANCES",
+		"type": "number",
+		"offset": "0xcae",
+		"size": 1,
+		"info": {}
+	}, {
+		"name": "DIVISION_TITLES",
+		"type": "number",
+		"offset": "0xcb2",
+		"size": 1,
+		"info": {}
+	}, {
+		"name": "CONFERENCE_CHAMPIONSHIPS",
+		"type": "number",
+		"offset": "0xcaf",
+		"size": 1,
+		"info": {}
+	}, {
+		"name": "CHAMPIONSHIPS",
+		"type": "number",
+		"offset": "0xcb3",
+		"size": 1,
+		"info": {}
+	}, {
+		"name": "HISTORIC_WIN",
+		"type": "number",
+		"offset": "0xed0",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "HISTORIC_LOSSES",
+		"type": "number",
+		"offset": "0xed2",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "LAST_LOTTERY_YEAR",
+		"type": "number",
+		"offset": "0x102e",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "LAST_NON-LOTTERY_YEAR",
+		"type": "number",
+		"offset": "0x1030",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "FIRST_PICKS_COUNT",
+		"type": "number",
+		"offset": "0x1032",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "LOTTERY_PICKS_COUNT",
+		"type": "number",
+		"offset": "0x1034",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_WITHEDIT",
+		"subtitle": "STATS_WITHEDIT_SUB",
+		"type": "blank"
+	}, {
+		"name": "CURRENT_YEAR_STATS",
+		"type": "combo",
+		"offset": "0xe80",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#1",
+		"type": "combo",
+		"offset": "0xe82",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#2",
+		"type": "combo",
+		"offset": "0xe84",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#3",
+		"type": "combo",
+		"offset": "0xe86",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#4",
+		"type": "combo",
+		"offset": "0xe88",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#5",
+		"type": "combo",
+		"offset": "0xe8a",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#6",
+		"type": "combo",
+		"offset": "0xe8c",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#7",
+		"type": "combo",
+		"offset": "0xe8e",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#8",
+		"type": "combo",
+		"offset": "0xe90",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#9",
+		"type": "combo",
+		"offset": "0xe92",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#10",
+		"type": "combo",
+		"offset": "0xe94",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#11",
+		"type": "combo",
+		"offset": "0xe96",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#12",
+		"type": "combo",
+		"offset": "0xe98",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#13",
+		"type": "combo",
+		"offset": "0xe9a",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#14",
+		"type": "combo",
+		"offset": "0xe9c",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#15",
+		"type": "combo",
+		"offset": "0xe9e",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#16",
+		"type": "combo",
+		"offset": "0xea0",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#17",
+		"type": "combo",
+		"offset": "0xea2",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#18",
+		"type": "combo",
+		"offset": "0xea4",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#19",
+		"type": "combo",
+		"offset": "0xea6",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#20",
+		"type": "combo",
+		"offset": "0xea8",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#21",
+		"type": "combo",
+		"offset": "0xeaa",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#22",
+		"type": "combo",
+		"offset": "0xeac",
+		"size": 2,
+		"info": {}
+	}, {
+		"name": "STATS_ID#23",
+		"type": "combo",
+		"offset": "0xeae",
+		"size": 2,
+		"info": {}
+	}],
+	"RECORDS": [],
+	"BUSINESS": [{
+		"name": "BUDGET",
+		"type": "blank"
+	}, {
+		"name": "TEAM_OPERATIONS",
+		"type": "number",
+		"offset": "0xfcc",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PLAYER_BUDGET",
+		"type": "number",
+		"offset": "0x1014",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "STAFF_BUDGET",
+		"type": "number",
+		"offset": "0x1018",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "UNALLOCATED_FUNDS",
+		"type": "number",
+		"offset": "0x1010",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PRICES",
+		"type": "blank"
+	}, {
+		"name": "TICKET",
+		"type": "float",
+		"offset": "0xf98",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PARKING",
+		"type": "float",
+		"offset": "0xf9c",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "HOT_DOG",
+		"type": "float",
+		"offset": "0xfa0",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "SODA",
+		"type": "float",
+		"offset": "0xfa4",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "BURGER",
+		"type": "float",
+		"offset": "0xfa8",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "COFFEE",
+		"type": "float",
+		"offset": "0xfac",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "NACHOS",
+		"type": "float",
+		"offset": "0xfb0",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "ICE_CREAM",
+		"type": "float",
+		"offset": "0xfb4",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "RESTAURANT",
+		"type": "float",
+		"offset": "0xfb8",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PROGRAM",
+		"type": "float",
+		"offset": "0xfbc",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "HAT",
+		"type": "float",
+		"offset": "0xfc0",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "SOUVENIR",
+		"type": "float",
+		"offset": "0xfc4",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "REVENUE",
+		"type": "blank"
+	}, {
+		"name": "MEDIA",
+		"type": "number",
+		"offset": "0xfe4",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "IN-ARENA_ADVERTISING",
+		"type": "number",
+		"offset": "0xfe8",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "GATE",
+		"type": "number",
+		"offset": "0xfd8",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "MERCHANDISE",
+		"type": "number",
+		"offset": "0xfdc",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "CONCESSIONS",
+		"type": "number",
+		"offset": "0xfe0",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PLAYOFFS",
+		"type": "number",
+		"offset": "0xff0",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "EXPENSES",
+		"type": "blank"
+	}, {
+		"name": "TEAM_OPERATIONS#1",
+		"type": "number",
+		"offset": "0x1004",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "STAFF_PAYROLL",
+		"type": "number",
+		"offset": "0x1000",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PLAYER_PAYROLL",
+		"type": "number",
+		"offset": "0xff4",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "ARENA_OPERATIONS",
+		"type": "number",
+		"offset": "0xff8",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PROMOTIONS",
+		"type": "number",
+		"offset": "0xffc",
+		"size": 4,
+		"info": {}
+	}, {
+		"name": "PLAYOFFS#1",
+		"type": "number",
+		"offset": "0x100c",
+		"size": 4,
+		"info": {}
+	}],
+	"RIVALS": [{
+		"name": "RIVALS_VALUE",
+		"type": "blank",
+		"subtitle": "RIVALS_VALUE_SUB"
+	}]
+}

@@ -7,11 +7,11 @@
   },
   {
    "optionDest": "filenames",
-   "value": "C:/Users/chris/Documents/Projects/SyncUpgrade/sync_main.py"
+   "value": "C:/Users/chris/Documents/Projects/Potion/app.py"
   },
   {
    "optionDest": "onefile",
-   "value": false
+   "value": true
   },
   {
    "optionDest": "console",
@@ -55,14 +55,6 @@
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/chris/Documents/Projects/SyncUpgrade/configs;."
-  },
-  {
-   "optionDest": "datas",
-   "value": "C:/Users/chris/Documents/Projects/SyncUpgrade/resources;."
-  },
-  {
-   "optionDest": "datas",
    "value": "C:/Users/chris/AppData/Local/Programs/Python/Python313/python313.dll;."
   },
   {
@@ -80,6 +72,18 @@
   {
    "optionDest": "collect_all",
    "value": "dribble"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/chris/Documents/Projects/Potion/app/resources;./app/resources/"
+  },
+  {
+   "optionDest": "collect_all",
+   "value": "nicegui"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "nicegui"
   }
  ],
  "nonPyinstallerOptions": {

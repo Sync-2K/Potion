@@ -1,0 +1,999 @@
+{
+    "VITALS": [
+        {
+            "name": "VITALS",
+            "type": "blank"
+        },
+        {
+            "name": "PositionOptions",
+            "type": "class",
+            "info":{
+                "options":[
+                {"name": "HEAD_COACH", "value": 0},
+                {"name": "ASSISTANT_COACH", "value": 1},
+                {"name": "HEAD_SCOUT", "value": 2},
+                {"name": "TRAINER", "value": 3},
+                {"name": "GM", "value": 4},
+                {"name": "GOVERNOR", "value": 5},
+                {"name": "CFO", "value": 6},
+                {"name": "ASSISTANT_GM", "value": 7}
+            ]
+             }
+        },
+        {
+            "name": "FIRSTNAME",
+            "type": "string",
+            "offset": "0x30",
+            "size": 40,
+            "info": {}
+        },
+        {
+            "name": "LASTNAME",
+            "type": "string",
+            "offset": "0x58",
+            "size": 40,
+            "info": {}
+        },
+        {
+            "name": "UNIQUE_PHOTO_ID",
+            "type": "number",
+            "offset": "0xD8",
+            "size": 2,
+            "tip": "UNIQUEID_TIP",
+            "info": {
+                "readonly": 1
+            }
+        },
+        {
+            "name": "FACEID",
+            "type": "bit",
+            "offset": "0xFE",
+            "size": 14,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "POSITION",
+            "type": "combo",
+            "offset": "0x10E",
+            "size": 3,
+            "info": {
+                "startbit":2,
+                "class": "PositionOptions"
+            }
+        },
+         {
+            "name": "YEARS_IN_LEAGUE",
+            "type": "bit",
+            "offset": "0x110",
+            "size": 7,
+            "info": {
+                "startbit": 7
+            }
+        },
+         {
+            "name": "PERSONALITY",
+            "type": "combo",
+            "offset": "0x10B",
+            "size": 2,
+            "info": {
+                "startbit": 5,
+                "options": [
+                    {"name": "NEUTRAL", "value": 0},
+                    {"name": "UNPREDICTABLE", "value": 1},
+                    {"name": "EXPRESSIVE", "value": 2},
+                    {"name": "LAID_BACK", "value": 3}
+                ]
+            }
+        },
+        {
+            "name":"BODY",
+            "type":"blank"
+        },
+        {
+            "name": "HEIGHT_CM",
+            "type": "number",
+            "offset": "0x0",
+            "size": 2,
+            "info": {
+                "isptr": 1,
+                "fixedpos": 2,
+                "min": 0,
+                "max": 327
+            }
+        },
+        {
+            "name": "WINGSPAN_CM",
+            "type": "number",
+            "offset": "0x0",
+            "size": 2,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x2",
+                "fixedpos": 2,
+                "min": 0,
+                "max": 327
+            }
+        },
+        {
+            "name": "SKINCOLOR",
+            "type": "combo",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x26",
+                "startbit": 6,
+                "optionmin": 0,
+                "max":9
+            }
+        },
+        {
+            "name": "BODY_SHAPE",
+            "type": "combo",
+            "offset": "0x0",
+            "size": 3,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x3C",
+                "startbit": 0,
+                "options":[
+                    {
+                        "name":"SOLID",
+                        "value": 0
+                    },
+                    {
+                        "name":"DEFINED",
+                        "value": 1
+                    },
+                    {   
+                        "name":"BURLY",
+                        "value": 2
+                    },
+                    {   
+                        "name":"BUILT",
+                        "value": 3
+                    },
+                    {   
+                        "name":"SLIGHT",
+                        "value": 4
+                    },
+                    {   
+                        "name":"COMPACT",
+                        "value": 5
+                    }
+                ]
+            }
+        },
+         {
+            "name": "GENDER",
+            "type": "combo",
+            "offset": "0x0",
+            "size": 2,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x22",
+                "startbit": 0,
+                "options":[
+                    {"name": "MALE", "value": 0},
+                    {"name": "FEMALE", "value": 1},
+                    {"name": "FEMALE_NONPLAYER", "value": 2},
+                    {"name": "CHILD", "value": 3}
+                ]
+            }
+        },
+        {
+            "name": "EYE_COLOR",
+            "type": "combo",
+            "offset": "0x0",
+            "size": 3,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x22",
+                "startbit": 5,
+                "options":[
+                    {"name": "BLUE", "value": 0},
+                    {"name": "BROWN", "value": 1},
+                    {"name": "LIGHT_BROWN", "value": 2},
+                    {"name": "GREEN", "value": 3},
+                    {"name": "HAZEL", "value": 4},
+                    {"name": "LIGHT_HAZEL", "value": 5},
+                    {"name": "AMBER", "value": 6},
+                    {"name": "GRAY", "value": 7}
+                ]
+            }
+        },
+        {
+            "name": "SHOULDERWIDTH",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x8"
+            }
+        },
+        {
+            "name": "BODYLENGTH",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x4"
+            }
+        }, 
+        {
+            "name": "ARM_SCALE",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0xC"
+            }
+        },
+         {
+            "name": "NECK_HEAD_SCALE",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x10"
+            }
+        },
+         {
+            "name": "LOWER_SCALE",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x14"
+            }
+        },
+         {
+            "name": "HAND_SCALE",
+            "type": "float",
+            "offset": "0x0",
+            "size": 4,
+            "tip": "CREATED_ONLY",
+            "info": {
+                "isptr": 1,
+                "deviation": "0x18"
+            }
+        },
+        {
+            "name": "TEAM",
+            "type": "blank"
+        },
+        {
+            "name": "CURRENT_TEAM",
+            "type": "combo",
+            "offset": "0x18",
+            "size": 8,
+            "info": {
+                "copyskip": 1
+            }
+        },
+        {
+            "name": "TEAM_POSITION",
+            "type": "combo",
+            "offset": "0x0",
+            "size": 0,
+            "info": {
+                "copyskip": 1
+            }
+        },
+        {
+            "name": "CONTRACT",
+            "type": "blank"
+        },
+        {
+            "name": "YEARS_LEFT",
+            "type": "bit",
+            "offset": "0x112",
+            "size": 4,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "SALARY",
+            "type": "bit",
+            "offset": "0xF8",
+            "size": 24,
+            "info": {
+                "startbit": 0
+            }
+        }
+    ],
+    "ATTRIBUTES": [
+        {
+            "name": "ATTRIBUTES",
+            "type": "blank"
+        },
+        {
+            "name": "AttributeOptions",
+            "type": "class",
+            "info":{
+                "options":[
+                {"name": "F ", "value": 0},
+                {"name": "D- ", "value": 1},
+                {"name": "D ", "value": 2},
+                {"name": "D+ ", "value": 3},
+                {"name": "C- ", "value": 4},
+                {"name": "C ", "value": 5},
+                {"name": "C+ ", "value": 6},
+                {"name": "B- ", "value": 7},
+                {"name": "B ", "value": 8},
+                {"name": "B+ ", "value": 9},
+                {"name": "A- ", "value": 10},
+                {"name": "A ", "value": 11},
+                {"name": "A+ ", "value": 12}
+            ]
+             }
+        },
+        {
+            "name": "OFFENSE",
+            "type": "combo",
+            "offset": "0x100",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "DEFENSE",
+            "type": "combo",
+            "offset": "0x100",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "POTENTIAL",
+            "type": "combo",
+            "offset": "0x108",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "CONTRACTS",
+            "type": "combo",
+            "offset": "0x102",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "TRADING",
+            "type": "combo",
+            "offset": "0x102",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "SCOUTING",
+            "type": "combo",
+            "offset": "0x101",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "TRAINING",
+            "type": "combo",
+            "offset": "0x101",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "BUSINESS",
+            "type": "combo",
+            "offset": "0x103",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_OFFENSE",
+            "type": "combo",
+            "offset": "0x104",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_DEFENSE",
+            "type": "combo",
+            "offset": "0x104",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_TRAINING",
+            "type": "combo",
+            "offset": "0x105",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_SCOUTING",
+            "type": "combo",
+            "offset": "0x105",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_CONTRACTS",
+            "type": "combo",
+            "offset": "0x106",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_TRADING",
+            "type": "combo",
+            "offset": "0x106",
+            "size": 4,
+            "info": {
+                "startbit":4,
+                "class": "AttributeOptions"
+            }
+        },
+        {
+            "name": "MAX_BUSINESS",
+            "type": "combo",
+            "offset": "0x107",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "AttributeOptions"
+            }
+        }
+    ],
+    "STYLE": [
+        {
+            "name": "STYLE",
+            "type": "blank"
+        },
+        {
+            "name": "StyleOptions",
+            "type": "class",
+            "info":{
+                "options":[
+                {"name": "NULL", "value" : 0},
+                {"name": "ATHLETICISM", "value" : 1},
+                {"name": "HIGH_IQ", "value" : 2},
+                {"name": "INTANGIBLES", "value" : 3},
+                {"name": "MARKETABILITY", "value" : 4},
+                {"name": "SHOOTING_POST", "value" : 5},
+                {"name": "SHOOTING_MID", "value" : 6},
+                {"name": "SHOOTING_THREE", "value" : 7},
+                {"name": "SHOT_CREATION", "value" : 8},
+                {"name": "SIZE", "value" : 9},
+                {"name": "SKILLS", "value" : 10},
+                {"name": "TOUGHNESS", "value" : 11},
+                {"name": "TRANSITION", "value" : 12},
+                {"name": "TWO-WAY", "value" : 13}
+            ]
+             }
+        },
+        {
+            "name": "STYLE_N#1",
+            "type": "combo",
+            "offset": "0x114",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "StyleOptions"
+            }
+        },
+        {
+            "name": "STYLE_N#2",
+            "type": "combo",
+            "offset": "0x115",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "StyleOptions"
+            }
+        },
+        {
+            "name": "STYLE_N#3",
+            "type": "combo",
+            "offset": "0x116",
+            "size": 4,
+            "info": {
+                "startbit":0,
+                "class": "StyleOptions"
+            }
+        },
+        {
+            "name": "OFFENSE_VS_DEFENSE",
+            "type": "combo",
+            "offset": "0x140",
+            "size": 3,
+            "info": {
+                "startbit":4,
+                "options": [
+                    {"name": "HEAVILY_OFFENSE", "value": 0},
+                    {"name": "LEANS_OFFENSE", "value": 1},
+                    {"name": "BALANCED", "value": 2},
+                    {"name": "BALANCED", "value": 3},
+                    {"name": "LEANS_DEFENSE", "value": 4},
+                    {"name": "HEAVILY_DEFENSE", "value": 5}
+                ]
+            }
+        },
+        {
+            "name": "GUARDS_VS_FORWARDS",
+            "type": "combo",
+            "offset": "0x141",
+            "size": 3,
+            "info": {
+                "startbit":4,
+                "options": [
+                    {"name": "HEAVILY_TO_GUARDS", "value": 0},
+                    {"name": "SLIGHTLY_TO_GUARDS", "value": 1},
+                    {"name": "BALANCED", "value": 2},
+                    {"name": "BALANCED", "value": 3},
+                    {"name": "SLIGHTLY_TO_FORWARDS", "value": 4},
+                    {"name": "HEAVILY_TO_FORWARDS", "value": 5}
+                ]
+            }
+        },
+        {
+            "name": "INSIDE_VS_OUTSIDE",
+            "type": "combo",
+            "offset": "0x142",
+            "size": 3,
+            "info": {
+                "startbit":4,
+                "options": [
+                    {"name": "EVERYTHING_INSIDE", "value": 0},
+                    {"name": "MORE_INSIDE", "value": 1},
+                    {"name": "BALANCED", "value": 2},
+                    {"name": "BALANCED", "value": 3},
+                    {"name": "MORE_OUTSIDE", "value": 4},
+                    {"name": "EVERYTHING_OUTSIDE", "value": 5}
+                ]
+            }
+        },
+        {
+            "name": "SystemOptions",
+            "type": "class",
+            "info":{
+                "options":[
+                {"name": "BALANCED", "value": 0},
+                {"name": "GRIT_&_GRIND", "value": 1},
+                {"name": "PACE_&_SPACE", "value": 2},
+                {"name": "PERIMENTER_CENTRIC", "value": 3},
+                {"name": "POST_CENTRIC", "value": 4},
+                {"name": "TRIANGLE", "value": 5},
+                {"name": "SEVEN_SECONDS", "value": 6},
+                {"name": "DEFENSE", "value": 7}
+            ]
+             }
+        },
+        {
+            "name": "PREFERRED_SYSTEM",
+            "type": "combo",
+            "offset": "0x109",
+            "size": 3,
+            "info": {
+                "startbit":4,
+                "class": "SystemOptions"
+            }
+        },
+        {
+            "name": "ACTIVE_SYSTEM",
+            "type": "combo",
+            "offset": "0x10B",
+            "size": 3,
+            "info": {
+                "startbit":1,
+                "class": "SystemOptions"
+            }
+        },
+        {
+            "name": "PROFICIENCY",
+            "type": "blank"
+        },
+        {
+            "name": "ProficiencyValue",
+            "type": "class",
+            "info":{
+                "min": 0,
+                "max": 255
+            }
+        },
+        {
+            "name": "BALANCED_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xEC",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "GRIT_&_GRIND_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xED",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "PACE_&_SPACE_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xEE",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "PERIMETER_CENTERIC_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xEF",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "POST_CENTRIC_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xF0",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "TRIANGLE_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xF1",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "SEVEN_SECONDS_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xF2",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        },
+        {
+            "name": "DEFENSE_PROFICIENCY",
+            "type": "slider",
+            "offset": "0xF3",
+            "size": 1,
+            "info": {
+                "class": "ProficiencyValue"
+            }
+        }
+    ],
+    "COACHING": [
+        {
+            "name": "COACHING",
+            "type": "blank"
+        },
+        {
+            "name": "HELP_DEFENSE",
+            "type": "slider",
+            "offset": "+14A",
+            "size": 8,
+            "info": {
+                "startbit": 1
+            }
+        },
+        {
+            "name": "RUN_PLAYS_FREQUENCY",
+            "type": "slider",
+            "offset": "+E0",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "ZONE_USAGE_FREQUENCY",
+            "type": "slider",
+            "offset": "+E2",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "BENCH_DEPTH",
+            "type": "slider",
+            "offset": "+DE",
+            "size": 4,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "BENCH_UTILIZATION",
+            "type": "slider",
+            "offset": "+138",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "LINEUP_PERFORMANCE_FACTOR",
+            "type": "slider",
+            "offset": "+DF",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "YOUNG_OLD",
+            "type": "slider",
+            "offset": "+13A",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "SYSTEM_PROFICIENCY_PERFERENCE",
+            "type": "slider",
+            "offset": "+EA",
+            "size": 8,
+            "info": {
+                "startbit": 0
+            }
+        },
+        {
+            "name": "PLAYBOOK",
+            "type": "combo",
+            "offset": "+108",
+            "size": 8,
+            "info": {
+                "startbit": 4,
+                "options": [
+                    {"name": "76ers", "value": 0},
+                    {"name": "Bucks", "value": 1},
+                    {"name": "Bulls", "value": 2},
+                    {"name": "Cavaliers", "value": 3},
+                    {"name": "Celtics", "value": 4},
+                    {"name": "Clippers", "value": 5},
+                    {"name": "Grizzlies", "value": 6},
+                    {"name": "Hawks", "value": 7},
+                    {"name": "Heat", "value": 8},
+                    {"name": "Hornets", "value": 9},
+                    {"name": "Jazz", "value": 10},
+                    {"name": "Kings", "value": 11},
+                    {"name": "Knicks", "value": 12},
+                    {"name": "Lakers", "value": 13},
+                    {"name": "Magic", "value": 14},
+                    {"name": "Maverick", "value": 15},
+                    {"name": "Nets", "value": 16},
+                    {"name": "Nuggets", "value": 17},
+                    {"name": "Pacers", "value": 18},
+                    {"name": "Pelicans", "value": 19},
+                    {"name": "Pistons", "value": 20},
+                    {"name": "Raptors", "value": 21},
+                    {"name": "Rockets", "value": 22},
+                    {"name": "Spurs", "value": 23},
+                    {"name": "Suns", "value": 24},
+                    {"name": "Thunder", "value": 25},
+                    {"name": "Timberwolves", "value": 26},
+                    {"name": "Trail Blazers", "value": 27},
+                    {"name": "Warriors", "value": 28},
+                    {"name": "Wizards", "value": 29},
+                    {"name": "STANDARD", "value": 30},
+                    {"name": "USER1", "value": 31},
+                    {"name": "USER2", "value": 32},
+                    {"name": "'65 Celtics", "value": 39},
+                    {"name": "'65 Lakers", "value": 40},
+                    {"name": "'71 Bucks", "value": 41},
+                    {"name": "'71 Lakers", "value": 42},
+                    {"name": "'71 Hawks", "value": 43},
+                    {"name": "'72 Lakers", "value": 44},
+                    {"name": "'72 Knicks", "value": 45},
+                    {"name": "'77 76ers", "value": 46},
+                    {"name": "'85 76ers", "value": 47},
+                    {"name": "'85 Bucks", "value": 48},
+                    {"name": "'86 Bulls", "value": 49},
+                    {"name": "'86 Celtics", "value": 50},
+                    {"name": "'86 Hawks", "value": 51},
+                    {"name": "'87 Lakers", "value": 52},
+                    {"name": "'89 Pistons", "value": 53},
+                    {"name": "'89 Bulls", "value": 54},
+                    {"name": "'90 Cavaliers", "value": 55},
+                    {"name": "'91 Bulls", "value": 56},
+                    {"name": "'91 Lakers", "value": 57},
+                    {"name": "'91 Trail Blazers", "value": 58},
+                    {"name": "'91 Warriors", "value": 59},
+                    {"name": "'93 Bulls", "value": 60},
+                    {"name": "'93 Hornets", "value": 61},
+                    {"name": "'94 Rockets", "value": 62},
+                    {"name": "'94 Nuggets", "value": 63},
+                    {"name": "'95 Knicks", "value": 64},
+                    {"name": "'95 Magic", "value": 65},
+                    {"name": "'96 Bulls", "value": 66},
+                    {"name": "'96 Sonics", "value": 67},
+                    {"name": "'98 Bulls", "value": 68},
+                    {"name": "'98 Jazz", "value": 69},
+                    {"name": "'98 Lakers", "value": 70},
+                    {"name": "'98 Spurs", "value": 71},
+                    {"name": "'99 Knicks", "value": 72},
+                    {"name": "'00 Blazers", "value": 73},
+                    {"name": "'00 Rockets", "value": 74},
+                    {"name": "'01 76ers", "value": 75},
+                    {"name": "'01 Lakers", "value": 76},
+                    {"name": "'03 Maverick", "value": 77},
+                    {"name": "'04 Pistons", "value": 78},
+                    {"name": "'04 Timberwolves", "value": 79},
+                    {"name": "'05 Suns", "value": 80},
+                    {"name": "'06 Heat", "value": 81},
+                    {"name": "'07 Cavaliers", "value": 82},
+                    {"name": "'08 Celtics", "value": 83},
+                    {"name": "'08 Rockets", "value": 84},
+                    {"name": "'13 Heat", "value": 85},
+                    {"name": "PROAM", "value": 101},
+                    {"name": "MIDNIGHT", "value": 103},
+                    {"name": "ALL_STAR", "value": 104},
+                    {"name": "SL", "value": 105}
+                ]
+            }
+        },
+        {
+            "name": "SIM_POINTS_OF_EMPHASIS",
+            "type": "blank"
+        },
+        {
+            "name": "OFFENSIVE_FOCUS",
+            "type": "combo",
+            "offset": "+13D",
+            "size": 4,
+            "info": {
+                "startbit": 7,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "GET_TO_THE_BASKET", "value": 1},
+                    {"name": "GET_SHOOTERS_OPEN", "value": 2},
+                    {"name": "FEED_THE_POST", "value": 3},
+                    {"name": "PICK_ROLL_OFFENSE", "value": 4},
+                    {"name": "NEUTRAL_OFFENSIVE_FOCUS", "value": 5},
+                    {"name": "PLAY_THROUGH_STAR", "value": 6}
+                ]
+            }
+        },
+        {
+            "name": "OFFENSIVE_TEMPO",
+            "type": "combo",
+            "offset": "+13E",
+            "size": 4,
+            "info": {
+                "startbit": 4,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "PATIENT_OFFENSE", "value": 7},
+                    {"name": "AVERAGE_TEMPO", "value": 8},
+                    {"name": "SHOOT_AT_WILL", "value": 9}
+                ]
+            }
+        },
+        {
+            "name": "OFFENSIVE_REBOUNDING",
+            "type": "combo",
+            "offset": "+13F",
+            "size": 3,
+            "info": {
+                "startbit": 1,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "CRASH_OFFENSIVE_GLASS", "value": 2},
+                    {"name": "SOME_CRASH_OTHER_GET_BACK", "value": 3},
+                    {"name": "LIMIT_TRANSITION", "value": 4}
+                ]
+            }
+        },
+        {
+            "name": "DEFENSIVE_FOCUS",
+            "type": "combo",
+            "offset": "+13C",
+            "size": 2,
+            "info": {
+                "startbit": 0,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "PROTECT_THE_PAINT", "value": 1},
+                    {"name": "NEUTRAL_DEFENSIVE_FOCUS", "value": 2},
+                    {"name": "LIMIT_PERIMETER_SHOTS", "value": 3}
+                ]
+            }
+        },
+        {
+            "name": "DEFENSIVE_AGGRESSION",
+            "type": "combo",
+            "offset": "+13C",
+            "size": 5,
+            "info": {
+                "startbit": 5,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "CONSERVATIVE_DEFENSE", "value": 16},
+                    {"name": "NEUTRAL_DEFENSIVE_AGGRESSION", "value": 17},
+                    {"name": "PLAY_PHYSICAL_DEFENSE", "value": 18}
+                ]
+            }
+        },
+        {
+            "name": "DEFENSIVE_REBOUNDING",
+            "type": "combo",
+            "offset": "+13D",
+            "size": 5,
+            "info": {
+                "startbit": 2,
+                "options": [
+                    {"name": "NO_PREFERENCE", "value": 0},
+                    {"name": "CRASH_DEFENSIVE_DEFENSE", "value": 19},
+                    {"name": "SOME_CRASH_OTHES_RUN", "value": 20},
+                    {"name": "RUN_IN_TRANSITION", "value": 21}
+                ]
+            }
+        }
+    ]
+}

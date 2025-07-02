@@ -1,9 +1,12 @@
 {
     "Base": {
+        "Cursor Base Address": "0x06C45F08",
+        "Cursor Offset": "0x240",
+        "Cursor Offset Chain": [],
         "Team Base Address": "0x0",
         "Team Offset Length": "0x1620",
-        "Player Base Address": "0x081F8798",
-        "Player Offset Chain": [[96, true], [-3288, false]],
+        "Player Base Address": "0x07E5DD88",
+        "Player Offset Chain": [],
         "Player Offset Length": "0x448",
         "Offset Appearance Data": "0x78",
         "Offset First Name": "0x28",
@@ -92,6 +95,18 @@
             "offset": "0x195",
             "startBit": 4,
             "length": 4
+        },
+        {
+            "name": "Used Retirement Grace",
+            "offset": "0x362",
+            "startBit": 0,
+            "length": 1
+        },
+        {
+            "name": "Contract Thought",
+            "offset": "0x274",
+            "startBit": 0,
+            "length": 3
         }
     ],
     "Attributes": [

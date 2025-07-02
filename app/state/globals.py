@@ -10,6 +10,8 @@ latest_player = None
 is_updating_ui = False
 live_player_loading = False
 
+copied_player: list[str, bytes] = [None, None]  # [name, data]
+
 integer_only_categories = ["Attributes", "Badges", "Tendencies"]
 
 input_handler = InputHandler()

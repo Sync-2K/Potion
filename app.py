@@ -1,4 +1,5 @@
 import asyncio
+import multiprocessing
 
 from dribble.memory import BuildPlayer, WriteBinaryBytes, WriteInteger
 from dribble.models import Game, GetCodeFromString, conversion_list
@@ -18,7 +19,7 @@ from app.logic.elements import (
 from app.logic.license import license_exists_and_valid, verify_license_key
 from app.state.globals import *
 
-# Pages
+# NiceGUI Pages
 
 
 def main_page():
@@ -60,6 +61,9 @@ def main_page():
             ui.button("Load Player", on_click=lambda: update_hover_player()).classes(
                 "bg-purple w-40"
             )
+            # ui.button("Copy Player", on_click=lambda: copy_hover_player()).classes(
+            #     "bg-purple w-40"
+            # )
             # ui.button("Refresh Roster", on_click=lambda: refresh_roster()).classes(
             #     "bg-purple w-40"
             # )
@@ -201,8 +205,15 @@ def main_page():
                 global label_hotzones
                 label_hotzones = ui.label("No player selected").classes("text-2xl")
                 with ui.row().classes("my-4"):
-                    ui.button("Coming soon").classes("bg-purple w-40").disable()
-                    ui.button("Coming soon").classes("bg-purple w-40").disable()
+                    ui.button(
+                        "Set All to Hot", on_click=lambda: set_all_hotzones(2)
+                    ).classes("bg-purple w-40")
+                    ui.button(
+                        "Set All to Cold", on_click=lambda: set_all_hotzones(0)
+                    ).classes("bg-purple w-40")
+                    ui.button(
+                        "Set All to Neutral", on_click=lambda: set_all_hotzones(1)
+                    ).classes("bg-purple w-40")
                 with ui.grid(columns=4).classes("gap-4 w-full"):
                     for hotzone in offsets["Hotzones"]:
                         hotzone_name = hotzone["name"]
@@ -271,6 +282,7 @@ def main_page():
                                 label=gear_name,
                                 options=list(gear_options.values()),
                                 with_input=True,
+                                new_value_mode="add-unique",
                             ).classes("w-full")
                         else:
                             select_element = (
@@ -316,7 +328,13 @@ def main_page():
                             "Accessories", accessory_name, select_element
                         )
 
-    ui.run(favicon="🍷", title="Potion Editor")
+    # Run the UI
+    ui.run(
+        favicon="🍷",
+        title="Potion 1.0.0",
+        show=True,
+        reload=False,
+    )
 
 
 def license_page():
@@ -350,6 +368,14 @@ def license_page():
 
         activate_button.on("click", submit)
 
+    # Run the UI
+    ui.run(
+        favicon="🍷",
+        title="Potion 1.0.0",
+        show=True,
+        reload=False,
+    )
+
 
 # UI Event Handlers
 
@@ -368,7 +394,6 @@ def update_player_tabs(game, player):
 
         body_inputs = input_handler.get_inputs("Body")
         label_body.set_text(f"{full_name}'s Body")
-        ui.notify(player.body)
         for name, input_field in body_inputs.items():
             value = player.body.get(name, 0)
             input_field.value = value
@@ -510,21 +535,23 @@ def create_value_handler(category, name):
     return handler
 
 
-# UI Event Handlers that read from the game
+# UI Game Event Handlers
+
+
+def copy_hover_player():
+    """Copy the currently hovered player to the clipboard."""
+    pass
 
 
 def update_hover_player():
     """Update the UI with the currently hovered player."""
-
-    global last_address
 
     if not game:
         ui.notify("Game not loaded")
         return
 
     hover_player = get_hover_player(game)
-    if hover_player and hover_player.address != last_address:
-        last_address = hover_player.address
+    if hover_player:
         update_player_tabs(game, hover_player)
 
 
@@ -545,8 +572,8 @@ def get_hover_player(game):
     """Get the currently hovered player in the game."""
 
     try:
-        base_cursor_address = 0x1E4CB3A8
-        cursor_offset = 0x1480
+        base_cursor_address = offsets["Base"]["Cursor Base Address"]
+        cursor_offset = offsets["Base"]["Cursor Offset"]
 
         cursor_base_address = game.memory.read_bytes(
             game.base_address + base_cursor_address, 8
@@ -560,7 +587,8 @@ def get_hover_player(game):
 
         return BuildPlayer(game, None, hover_player_address)
 
-    except:
+    except Exception as e:
+        print(f"[Get Hover Player Error] {e}")
         return None
 
 
@@ -584,10 +612,6 @@ def sync_worker():
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-    if license_exists_and_valid():
-        sync_worker()
-        main_page()
-    else:
-        license_page()
-
-    ui.run(favicon="🍷", title="Potion Editor")
+    multiprocessing.freeze_support()
+    sync_worker()
+    main_page()

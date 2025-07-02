@@ -1,0 +1,82 @@
+[{
+    "name": "RECORDS_FIRST_NAME#%d",
+    "type": "string",
+    "offset": "0xEC8",
+    "size": 20,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X",
+        "isutf8": 1
+    }
+},
+{
+    "name": "RECORDS_LAST_NAME#%d",
+    "type": "string",
+    "offset": "0xEC8",
+    "size": 20,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X",
+        "isutf8": 1
+    }
+},
+{
+    "name": "RECORDS_PLAYER_SIGNATUREID#%d",
+    "type": "number",
+    "offset": "0xEC8",
+    "size": 4,
+    "tip": "RECORDS_PLAYER_SIGNATUREID_TIP",
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X"
+    }
+},
+{
+    "name": "RECORDS_DATA#%d",
+    "type": "float",
+    "offset": "0xEC8",
+    "size": 4,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X"
+    }
+},
+{
+    "name": "RECORDS_YEAR#%d",
+    "type": "bit",
+    "offset": "0xEC8",
+    "size": 12,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X",
+        "startbit": 1
+    }
+},
+{
+    "name": "RECORDS_MONTH#%d",
+    "type": "bit",
+    "offset": "0xEC8",
+    "size": 4,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X",
+        "startbit": 5,
+        "max":12
+    }
+},
+{
+    "name": "RECORDS_DAY#%d",
+    "type": "bit",
+    "offset": "0xEC8",
+    "size": 5,
+    "info": {
+        "isptr": 1,
+        "deviation": "0x%X",
+        "startbit": 0
+    }
+},
+{
+    "name": "",
+    "type": "blank"
+}
+]

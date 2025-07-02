@@ -1,0 +1,266 @@
+{
+    "VITALS":[
+        {
+            "name": "VITALS",
+            "type": "blank"
+        },
+        {
+            "name": "UNIQUEID",
+            "type": "number",
+            "offset": "0x71E",
+            "size": 1,
+            "tip": "UNIQUEID_TIP",
+            "info": {
+                "readonly": 1
+            }
+        },
+        {
+            "name": "NAME",
+            "type": "string",
+            "offset": "0x0",
+            "size": 66,
+            "info": {}
+        },
+        {
+            "name": "NICKNAME",
+            "type": "string",
+            "offset": "0x42",
+            "size": 64,
+            "info": {}
+        },
+        {
+            "name": "CITY_NAME",
+            "type": "string",
+            "offset": "0x82",
+            "size": 48,
+            "info": {}
+        },
+        {
+            "name": "CITY_ABB",
+            "type": "string",
+            "offset": "0xFC",
+            "size": 18,
+            "info": {}
+        },
+        {
+            "name": "STATE",
+            "type": "string",
+            "offset": "0x10E",
+            "size": 8,
+            "info": {}
+        },
+        {
+            "name": "FILES",
+            "type": "blank"
+        },
+        {
+            "name": "DORNAS_ID",
+            "type": "string",
+            "offset": "0xB2",
+            "size": 8,
+            "info": {
+                "numberonly": 1
+            }
+        },
+        {
+            "name": "LED ID",
+            "type": "string",
+            "offset": "0xBA",
+            "size": 8,
+            "info": {
+                "numberonly": 1
+            }
+        },
+        {
+            "name": "ARENA_FILE",
+            "type": "string",
+            "offset": "0xC2",
+            "size": 10,
+            "tip": "NO_IFF_SUFFIX",
+            "info": {}
+        },
+        {
+            "name": "FLOOR_FILE",
+            "type": "string",
+            "offset": "0xCC",
+            "size": 12,
+            "tip": "NO_IFF_SUFFIX",
+            "info": {
+                "isutf8": 1
+            }
+        },
+        {
+            "name": "ALT_FLOOR_FILE#1",
+            "type": "string",
+            "offset": "0xD8",
+            "size": 12,
+            "tip": "NO_IFF_SUFFIX",
+            "info": {
+                "isutf8": 1
+            }
+        },
+        {
+            "name": "ALT_FLOOR_JERSEY#1",
+            "type": "combo",
+            "offset": "0x72E",
+            "size": 2,
+            "tip": "ALT_FLOOR_JERSEY_TIP",
+            "info": {}
+        },
+        {
+            "name": "ALT_FLOOR_FILE#2",
+            "type": "string",
+            "offset": "0xE4",
+            "size": 12,
+            "tip": "NO_IFF_SUFFIX",
+            "info": {
+                "isutf8": 1
+            }
+        },
+        {
+            "name": "ALT_FLOOR_JERSEY#2",
+            "type": "combo",
+            "offset": "0x730",
+            "size": 2,
+            "tip": "ALT_FLOOR_JERSEY_TIP",
+            "info": {}
+        },
+        {
+            "name": "ALT_FLOOR_FILE#3",
+            "type": "string",
+            "offset": "0xF0",
+            "size": 12,
+            "tip": "NO_IFF_SUFFIX",
+            "info": {
+                "isutf8": 1
+            }
+        },
+        {
+            "name": "ALT_FLOOR_JERSEY#3",
+            "type": "combo",
+            "offset": "0x724",
+            "size": 16,
+            "tip": "ALT_FLOOR_JERSEY_TIP",
+            "info": {
+                "startbit": 7
+            }
+        },
+        {
+            "name": "TYPE",
+            "type": "blank"
+        },
+        {
+            "name": "TYPE",
+            "type": "combo",
+            "offset": "0x724",
+            "size": 4,
+            "info": {
+                "startbit": 0,
+                "options": [
+                    {"name": "NORMAL", "value": 0},
+                    {"name": "ALLSTARS", "value": 1},
+                    {"name": "LEGEND", "value": 2},
+                    {"name": "STREET", "value": 3},
+                    {"name": "USER", "value": 4},
+                    {"name": "HALF_COURT", "value": 5},
+                    {"name": "SECRET", "value": 6},
+                    {"name": "PRACTICE", "value": 7},
+                    {"name": "FORUM_UNLOCKABLE", "value": 8},
+                    {"name": "HISTORIC", "value": 9},
+                    {"name": "NCAA ", "value": 10},
+                    {"name": "SHORT ", "value": 11},
+                    {"name": "FIBA ", "value": 12}
+                ]
+            }
+        },
+        {
+            "name": "CROWD_TYPE",
+            "type": "combo",
+            "offset": "0x737",
+            "size": 3,
+            "info": {
+                "startbit": 5,
+                "options": [
+                    {"name": "NULL", "value": 0},
+                    {"name": "NBA ", "value": 1},
+                    {"name": "BLACK_TOP", "value": 2},
+                    {"name": "PARK_AFTER_DARK", "value": 3},
+                    {"name": "PRO-AM ", "value": 4},
+                    {"name": "ASIA", "value": 5}
+                ]
+            }
+        },
+        {
+            "name": "BASKETBALL_TYPE",
+            "type": "combo",
+            "offset": "0x12FC",
+            "size": 32,
+            "info": {
+                "startbit": 0,
+                "options": [
+                    {"name": "NBA ", "value": 3692822213},
+                    {"name": "WNBA ", "value": 3549115088},
+                    {"name": "SPALDING", "value": 1649390924}
+                ]
+            }
+        },
+        {
+            "name": "ARENA_CAPACITY",
+            "type": "number",
+            "offset": "0x71C",
+            "size": 2,
+            "info": {}
+        },
+        {
+            "name": "MUSIC_PROBABILITY",
+            "type": "number",
+            "offset": "0x720",
+            "size": 1,
+            "info": {}
+        },
+        {
+            "name": "CROWD_LOUDNESS",
+            "type": "number",
+            "offset": "0x721",
+            "size": 1,
+            "info": {}
+        },
+        {
+            "name": "SOUND_ID",
+            "type": "number",
+            "offset": "0x722",
+            "size": 1,
+            "info": {}
+        },
+        {
+            "name": "LOCATION_TYPE",
+            "type": "combo",
+            "offset": "0x724",
+            "size": 3,
+            "info": {
+                "startbit": 4,
+                "options":[
+                    {"name": "INDOOR_DAY_AND_NIGHT", "value": 0},
+                    {"name": "INDOOR_DAY", "value": 1},
+                    {"name": "INDOOR_NIGHT", "value": 2},
+                    {"name": "OUTDOOR_DAY", "value": 3},
+                    {"name": "OUTDOOR_NIGHT", "value": 4},
+                    {"name": "OUTDOOR_DAY_AND_NIGHT", "value": 5}
+                ]
+            }
+        },
+        {
+            "name": "HOME_BASKET",
+            "type": "combo",
+            "offset": "0x12FB",
+            "size": 1,
+            "info": {
+                "startbit": 5,
+                "options":[
+                    {"name": "LEFT_SIDE", "value": 0},
+                    {"name": "RIGHT_SIDE", "value": 1}
+                ]
+            }
+        }
+    ]
+}
